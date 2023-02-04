@@ -1,0 +1,25 @@
+.title{
+    background-color:  rgb(191, 190, 209)!important;
+    text-align: center;
+    padding: 0 !important;
+}
+
+.pedido{
+    font-size: 20px!important;
+    text-align: center;
+    font-weight: bold!important;
+    border-bottom: 1px solid black;
+    background-color:  rgb(191, 190, 209)!important;
+
+}
+
+.descricao{
+    text-align: center;
+}
+
+.temporizador{
+    text-align: center!important;
+    background-color:  rgb(191, 190, 209)!important;
+    text-align: center;
+    padding: 0 !important;
+}
