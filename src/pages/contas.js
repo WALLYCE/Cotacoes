@@ -34,7 +34,7 @@ React.useEffect(()=>{
   if(autenticado){
   try{
   const tokens = await getToken();
-  const resposta = await axios.post('http://localhost:3000/api/users/consultar', {token: tokens })
+  const resposta = await axios.post('/api/users/consultar', {token: tokens })
   const usuarios = resposta.data;
   usuarios.map((item)=>{
       if(item.cotacao == 1){
@@ -92,7 +92,7 @@ const handleClick = async (event)=>{
     //const result = await adicionaUsuario(values);
     if(result instanceof Error)throw new Error(result.response.data);
 
-    const resposta = await axios.post('http://localhost:3000/api/users/consultar')
+    const resposta = await axios.post('/api/users/consultar')
     const usuarios = resposta.data;
     usuarios.map((item)=>{
         if(item.cotacao == 1){

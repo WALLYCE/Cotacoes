@@ -27,28 +27,28 @@ export const DadosContextProvider = ({children})=>{
     }
     
     const atualizaSolicitacoes = async(token) =>{
-        const dados = await axios.post('http://localhost:3000/api/solicitacao/consulta', {token: token});
+        const dados = await axios.post('/api/solicitacao/consulta', {token: token});
         setSolicitacoes(dados.data);
     
     }
 
     const atualizaTodas = async(token) =>{
-        const dados = await axios.post('http://localhost:3000/api/todas/consultar', {token: token});
+        const dados = await axios.post('/api/todas/consultar', {token: token});
         setTodas(dados.data);
 
     }
     const atualizaCotacoes = async(token) =>{
-            const dados = await axios.post('http://localhost:3000/api/cotacao/consulta', {token: token});
+            const dados = await axios.post('/api/cotacao/consulta', {token: token});
             setCotacoes(dados.data);
         }
 
    const atualizaAutorizados = async(token) =>{
-            const dados = await axios.post('http://localhost:3000/api/autorizacao/autorizados', {token: token});
+            const dados = await axios.post('/api/autorizacao/autorizados', {token: token});
             setAutorizados(dados.data);
         }
     const adicionaSolicitacao = async(dados) =>{
         try{
-            const resultado = await axios.post('http://localhost:3000/api/solicitacao/adicionar', dados)
+            const resultado = await axios.post('/api/solicitacao/adicionar', dados)
             return resultado.data;
             }
             catch(error){
@@ -57,23 +57,23 @@ export const DadosContextProvider = ({children})=>{
     }
     const atualizaRecusados = async(token)=>{
         
-            const resultado = await axios.post('http://localhost:3000/api/cotacao/recusados', {token: token})
+            const resultado = await axios.post('/api/cotacao/recusados', {token: token})
             setRecusados(resultado.data)
     }
     const atualizaLancamentos = async (token) =>{
       
-            const resultado = await axios.post('http://localhost:3000/api/lancamento/consulta', {token: token})
+            const resultado = await axios.post('/api/lancamento/consulta', {token: token})
             setLancamentos(resultado.data)
             
     }
     const atualizaConcluidos = async (token)=>{
-        const resultado = await axios.post('http://localhost:3000/api/entrega/consulta', {token: token})
+        const resultado = await axios.post('/api/entrega/consulta', {token: token})
         setConcluidos(resultado.data)
     }
 
     const adicionaCotacao = async(dados) =>{
         try{
-        const resultado = await axios.post('http://localhost:3000/api/cotacao/adicionar', dados)
+        const resultado = await axios.post('/api/cotacao/adicionar', dados)
         return resultado.data;
         }
         catch(error){
@@ -84,7 +84,7 @@ export const DadosContextProvider = ({children})=>{
     
     const deletaSolicitacao = async(dados) =>{
         try{
-        const resultado = await axios.post('http://localhost:3000/api/solicitacao/deletar', dados)
+        const resultado = await axios.post('/api/solicitacao/deletar', dados)
         return resultado.data;
         }
         catch(error){
@@ -94,7 +94,7 @@ export const DadosContextProvider = ({children})=>{
     
     const adicionaLancamento = async(dados) =>{
         try{
-        const resultado = await axios.post('http://localhost:3000/api/lancamento/adicionar', dados)
+        const resultado = await axios.post('/api/lancamento/adicionar', dados)
         return resultado.data;
         }
         catch(error){
@@ -105,7 +105,7 @@ export const DadosContextProvider = ({children})=>{
     
     const adicionaEntrega = async(dados) =>{
         try{
-        const resultado = await axios.post('http://localhost:3000/api/entrega/adicionar', dados)
+        const resultado = await axios.post('/api/entrega/adicionar', dados)
         return resultado.data;
         }
         catch(error){
@@ -115,7 +115,7 @@ export const DadosContextProvider = ({children})=>{
      
     const recusarCotacoes = async(dados)=>{
         try{
-            const resultado = await axios.post('http://localhost:3000/api/autorizacao/recusar', dados)
+            const resultado = await axios.post('/api/autorizacao/recusar', dados)
             return resultado.data;
             }
             catch(error){
@@ -125,7 +125,7 @@ export const DadosContextProvider = ({children})=>{
 
     const autorizarCotacoes = async(dados)=>{
         try{
-            const resultado = await axios.post('http://localhost:3000/api/autorizacao/autorizar', dados)
+            const resultado = await axios.post('/api/autorizacao/autorizar', dados)
             return resultado.data;
             }
             catch(error){

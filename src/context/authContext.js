@@ -28,7 +28,7 @@ export const AuthContextProvider = ({children})=>{
     
   async function validaToken(token_recuperado){
     try{
-    const result = await axios.post('http://localhost:3000/api/users/logintoken', {token: token_recuperado});
+    const result = await axios.post('/api/users/logintoken', {token: token_recuperado});
     setUser({
         nome: result.data.nome,
         email: result.data.email,
@@ -87,7 +87,7 @@ function authCotar(){
 
 async function adicionaUsuario(usuario){
     try{
-        const resultado = await axios.post('http://localhost:3000/api/users/cadastro', {usuario: usuario, token: user.token});
+        const resultado = await axios.post('/api/users/cadastro', {usuario: usuario, token: user.token});
         if(resultado.data instanceof Error) throw new Error(resultado.message)
         return resultado.data;
         }
@@ -186,7 +186,7 @@ async function UpdateUser(dados){
         console.log(dados)
         const valor = await {usuario: dados,token: user.token};
         
-        const resultado = await axios.post('http://localhost:3000/api/users/update', valor)
+        const resultado = await axios.post('/api/users/update', valor)
         return resultado.data;
         }
         catch(error){
@@ -196,7 +196,7 @@ async function UpdateUser(dados){
 
 async function signIn(dados){
     try{
-        const result = await axios.post('http://localhost:3000/api/users/login', dados);
+        const result = await axios.post('/api/users/login', dados);
         setCookie('authorization', result.data.token, {
             maxAge: 60*60*1, //expira em 1 hora
         });
@@ -226,7 +226,7 @@ async function signIn(dados){
 async function getUsers(){
     try{
         const valor = await {token: user.token};
-        const resultado = await axios.post('http://localhost:3000/api/users/consultar', valor)
+        const resultado = await axios.post('/api/users/consultar', valor)
         console.log(resultado.data)
         return resultado.data;
         }
