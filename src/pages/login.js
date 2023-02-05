@@ -126,13 +126,6 @@ const handleClick = async (event)=>{
               Entrar
             </Button>
             {alert ? <Alert  onClose={() => {setAlert(false)}} variant="filled" severity="error">erro</Alert> : <></> }
-            <Grid container>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Não tem uma conta?"}
-                </Link>
-              </Grid>
-            </Grid>
           </Box>
         </Box>
       </Container>

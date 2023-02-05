@@ -190,7 +190,6 @@ export default function ButtonEntrega(props) {
      
       <Button variant="contained" onClick={handleClickOpen}>
         Confirmar
-         entrega
       </Button>
 
       <BootstrapDialog
@@ -380,7 +379,7 @@ export default function ButtonEntrega(props) {
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClick}>
-            Confirmar entrega
+            Confirmar
           </Button>
         </DialogActions>
       </BootstrapDialog>
